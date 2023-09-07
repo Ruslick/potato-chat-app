@@ -10,6 +10,7 @@ declare global {
 
   declare type AppDispatch = import("./../src/1_app/store/initStore").AppDispatch
 
+  declare 
 
 }
 
