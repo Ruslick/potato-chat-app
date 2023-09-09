@@ -31,12 +31,10 @@ export const Protected: FC<ProtectedProps> = ({
 		return <Loader />;
 	}
 
-	if (isAuth && !withoutAuth) {
+	if (isAuth !== withoutAuth) {
 		return children;
 	}
-	if (!isAuth && withoutAuth) {
-		return children;
-	}
+
 
 	return <Navigate to={redirectTo} />;
 };

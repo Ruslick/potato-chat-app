@@ -16,7 +16,7 @@ export const RegisterForm: FC = () => {
 		<>
 			<AuthForm variant="register" onSubmit={handleSubmit} />
 			<p>
-				Alredy have an account ? <Link to={"/login"}>Sign in</Link>
+				Already have an account ? <Link to={"/login"}>Sign in</Link>
 			</p>
 		</>
 	);
