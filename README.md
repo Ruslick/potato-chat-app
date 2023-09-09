@@ -1,5 +1,11 @@
 # React + ReduxToolkit + Styled-components + Typescript
 
+###
+Как запустить
+1. git clone
+2. npm i
+3. npm run dev
+
 ### Структура проекта: 
 
 - shared — переиспользуемый код, не имеющий отношения к специфике приложения/бизнеса.(например, UIKit, libs, API)
@@ -10,3 +16,6 @@
 - app — настройки, стили и провайдеры для всего приложения.
 
 
+### Figma
+
+https://www.figma.com/file/Cg95MzY7rcvsJzDhySOLb9/Potato-chat?node-id=0%3A1&mode=dev
