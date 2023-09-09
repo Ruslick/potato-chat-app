@@ -1,20 +1,8 @@
-
 declare global {
+	declare type RootState = import("./../src/1_app/store/initStore").RootState;
 
-  export type MessageDto = {
-    user: string,
-    message: string
-  }
-
-  declare type RootState = import("./../src/1_app/store/initStore").RootState
-
-  declare type AppDispatch = import("./../src/1_app/store/initStore").AppDispatch
-
-  declare 
-
+	declare type AppDispatch =
+		import("./../src/1_app/store/initStore").AppDispatch;
 }
 
-
-
-
-export {}
+export {};
