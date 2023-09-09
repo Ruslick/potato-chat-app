@@ -1,7 +1,7 @@
 # React + ReduxToolkit + Styled-components + Typescript
 
-###
-Как запустить
+### Как запустить:
+
 1. git clone
 2. npm i
 3. npm run dev
