@@ -5,37 +5,14 @@ import { Protected } from "../../5_entities/auth";
 export const router = createBrowserRouter([
 	{
 		path: "/",
-		element: (
-			<Protected>
-				<HomePage />
-			</Protected>
-		),
+		element: <Protected page={<HomePage />} />,
 	},
 	{
 		path: "/login",
-		element: (
-			<Protected withoutAuth redirectTo="/">
-				<LoginPage />
-			</Protected>
-		),
+		element: <Protected withoutAuth redirectTo="/" page={<LoginPage />} />,
 	},
 	{
 		path: "/register",
-		element: (
-			<Protected withoutAuth redirectTo="/">
-				<RegisterPage />
-			</Protected>
-		),
+		element: <Protected withoutAuth redirectTo="/" page={<RegisterPage />} />,
 	},
-	{
-		path: "/:userId",
-		element: (
-			<Protected>
-				<h1>user</h1>
-			</Protected>
-		),
-	},
-	{ path: "/group", element: <h1>group</h1> },
-	{ path: "/group/:groupId", element: <h1>group id</h1> },
-	{ path: "/messages/:userId", element: <h1>messages</h1> },
 ]);
