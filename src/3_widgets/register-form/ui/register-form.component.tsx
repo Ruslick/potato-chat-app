@@ -1,6 +1,8 @@
 import { FC } from "react";
 import { Link } from "react-router-dom";
 import { AuthForm } from "../../../5_entities/auth";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { authFirebase } from "../../../6_shared";
 
 export const RegisterForm: FC = () => {
 	const handleSubmit = (
@@ -10,6 +12,7 @@ export const RegisterForm: FC = () => {
 	) => {
 		e.preventDefault();
 		console.log(email, pass);
+		createUserWithEmailAndPassword(authFirebase, email, pass);
 	};
 
 	return (
