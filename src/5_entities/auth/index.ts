@@ -1,6 +1,8 @@
+import { TSubmitAuthFunction, TSubmitResetFunction } from "./model/types";
 import { Protected } from "./ui/protected-route";
-import { AuthForm } from "./ui/auth-form.container";
+import { AuthFormContainer } from "./ui/auth-form.container";
 
 
-export { AuthForm, Protected };
+export { AuthFormContainer, Protected };
 
+export type {TSubmitAuthFunction, TSubmitResetFunction}
