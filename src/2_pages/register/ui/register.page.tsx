@@ -1,6 +1,15 @@
 import { FC } from "react";
-import { RegisterForm } from "../../../3_widgets/register-form/ui/register-form.component";
+import { RegisterWidget } from "../../../3_widgets/auth-widgets";
+import { Link } from "react-router-dom";
 
 export const RegisterPage: FC = () => {
-	return <RegisterForm />;
+	return (
+		<>
+			<RegisterWidget />
+
+			<p>
+				Already have an account ? <Link to={"/login"}>Sign in</Link>
+			</p>
+		</>
+	);
 };

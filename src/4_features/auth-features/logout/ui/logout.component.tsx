@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import { FC } from "react";
-import { authFirebase } from "../../../6_shared";
+import { authFirebase } from "../../../../6_shared";
 
 export const Logout: FC = () => {
 

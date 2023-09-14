@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Logout } from "../../../4_features/logout";
 import { authFirebase } from "../../../6_shared";
+import { Logout } from "../../../4_features/auth-features/logout";
 
 export const HomeComponent: FC = () => {
 	if (!authFirebase.currentUser) throw new Error("No user");

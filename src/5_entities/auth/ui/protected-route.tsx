@@ -4,22 +4,21 @@ import { Loader, authFirebase } from "../../../6_shared";
 import { Navigate } from "react-router-dom";
 
 interface ProtectedProps {
-	children: React.ReactNode;
+	page: React.ReactNode;
 	withoutAuth?: boolean;
 	redirectTo?: string;
 }
 
 export const Protected: FC<ProtectedProps> = ({
-	children,
 	withoutAuth = false,
 	redirectTo = "/login",
+	page
 }) => {
 	const [isAuth, setIsAuth] = useState(false);
 	const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     onAuthStateChanged(authFirebase, (user) => {
-      console.log("user", user);
       setIsAuth(!!user);
       setLoaded(true);
     });
@@ -31,8 +30,10 @@ export const Protected: FC<ProtectedProps> = ({
 		return <Loader />;
 	}
 
+
 	if (isAuth !== withoutAuth) {
-		return children;
+		
+		return page;
 	}
 
 
