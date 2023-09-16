@@ -1,23 +1,31 @@
 import { createBrowserRouter } from "react-router-dom";
-import { HomePage, LoginPage, RegisterPage } from "../../2_pages";
-import { Protected } from "../../5_entities/auth";
-import { ResetPasswordPage } from "../../2_pages/reset-password/ui/reset-password-page";
+import {
+	EnterUsernamePage,
+	HomePage,
+	LoginPage,
+	RegisterPage,
+	ResetPasswordPage,
+} from "../../2_pages";
+import {
+	PrivateRoute,
+	PublicRoute,
+} from "../../5_entities/auth-entities/routes-manipulation";
 
 export const router = createBrowserRouter([
 	{
-		path: "/",
-		element: <Protected page={<HomePage />} />,
+		element: <PrivateRoute />,
+		children: [{ index: true, element: <HomePage /> }],
 	},
 	{
-		path: "/login",
-		element: <Protected withoutAuth redirectTo="/" page={<LoginPage />} />,
+		element: <PublicRoute />,
+		children: [
+			{ path: "login", element: <LoginPage /> },
+			{ path: "register", element: <RegisterPage /> },
+			{ path: "reset-password", element: <ResetPasswordPage /> },
+		],
 	},
 	{
-		path: "/register",
-		element: <Protected withoutAuth redirectTo="/" page={<RegisterPage />} />,
-	},
-	{
-		path: "/reset-password",
-		element: <Protected withoutAuth redirectTo="/" page={<ResetPasswordPage />} />,
+		element: <PrivateRoute extexdsUsername={true} />,
+		children: [{ path: "enter-username", element: <EnterUsernamePage /> }],
 	},
 ]);
