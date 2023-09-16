@@ -1,4 +1,4 @@
-import { firebaseConfig } from "./../api/constants/constants";
+import { firebaseConfig } from "./../lib/constants";
 import { getAuth, setPersistence, browserLocalPersistence } from "firebase/auth";
 import { initializeApp } from "firebase/app";
 
