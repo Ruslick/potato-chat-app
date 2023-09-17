@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { FormStyled } from "../../../../../6_shared/ui/form.styled";
+import { FormStyled } from "../../../../../6_shared/ui/form/form.styled";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { authFirebase } from "../../../../../6_shared";
 import { useInputs } from "../../../../../5_entities/auth-entities/auth";
