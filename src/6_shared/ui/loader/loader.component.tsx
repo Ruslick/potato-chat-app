@@ -1,10 +1,14 @@
 import { FC } from "react";
-import { LoaderStyled, LoaderWrapperStyled } from "./loader.styled";
 import { createPortal } from "react-dom";
+import { LoaderStyled, LoaderWrapperStyled } from "./loader.styled";
 
-export const Loader: FC = () => {
+interface LoaderProps {
+	isVisible: boolean;
+}
+
+export const Loader: FC<LoaderProps> = ({ isVisible }) => {
 	return createPortal(
-		<LoaderWrapperStyled>
+		<LoaderWrapperStyled $isVisible={isVisible}>
 			<LoaderStyled>
 				<div />
 				<div />

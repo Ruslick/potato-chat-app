@@ -27,7 +27,7 @@ const rotate3 = keyframes`
 		}
 `;
 
-export const LoaderWrapperStyled = styled.div`
+export const LoaderWrapperStyled = styled.div<{$isVisible: boolean}>`
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -35,8 +35,11 @@ export const LoaderWrapperStyled = styled.div`
 	top: 0;
 	width: 100vw;
 	height: 100vh;
-
-`
+	background-color: #00000055;
+	opacity: ${(props) => (props.$isVisible ? 1 : 0)};
+	pointer-events: ${(props) => (props.$isVisible ? "auto" : "none")};
+	transition: 300ms 150ms opacity;
+`;
 
 export const LoaderStyled = styled.div`
 	display: inline-block;

@@ -1,5 +1,5 @@
-import { onAuthStateChanged } from "firebase/auth";
-import { FC, useEffect, useState } from "react";
+import { FC } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, Outlet } from "react-router-dom";
 import { Loader, authFirebase } from "../../../../../6_shared";
 
@@ -10,41 +10,35 @@ interface IPrivateRoute {
 export const PrivateRoute: FC<IPrivateRoute> = ({
 	extexdsUsername = false,
 }) => {
-	const [isAuth, setIsAuth] = useState(false);
-	const [loaded, setLoaded] = useState(false);
-	const [hasUserName, setHasUserName] = useState(false);
+
+	const [user, loading, error] = useAuthState(authFirebase);
 
 	// add when this service will be used
 	// const [hasVerifiedEmail, setHasVerifiedEmail] = useState(false);
 
-	useEffect(() => {
-		onAuthStateChanged(authFirebase, (user) => {
-			console.log(user?.displayName);
-			setIsAuth(!!user);
-			setHasUserName(!!user?.displayName);
-			// setHasVerifiedEmail(!!user?.emailVerified)
-			setLoaded(true);
-		});
-	}, []);
 
-	if (!loaded) {
-		return <Loader />;
+	if (error) throw new Error (error.message);
+
+	if (loading) {
+		return <Loader isVisible />;
 	}
 
-	if (!isAuth) {
+	if (!user) {
 		return <Navigate to={"/login"} />;
 	}
 
-	if (extexdsUsername && !hasUserName) {
+	if (extexdsUsername && !user.displayName) {
 		return <Outlet />;
 	}
-	if (extexdsUsername && hasUserName) {
+	if (extexdsUsername && user.displayName) {
 		return <Navigate to={"/"} />;
 	}
 
-	if (!hasUserName) {
+	if (!user.displayName) {
 		return <Navigate to={"/enter-username"} />;
 	}
+
+
 
 	return <Outlet />;
 };
