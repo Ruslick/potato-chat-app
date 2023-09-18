@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-export const useModal = () => {
-	const [isVisible, setVisible] = useState(false);
+export const useModal = (initState = false) => {
+	const [isVisible, setVisible] = useState(initState);
 
 	const toggleModal = () => {
 		setVisible(!isVisible);
