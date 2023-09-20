@@ -1,7 +1,14 @@
+import { FC } from "react";
 import { InputProps } from "../../model/input";
 import { InputComponent } from "./input.styled";
 
-function Input({ value, onChange, name, type, placeholder }: InputProps) {
+export const Input: FC<InputProps> = ({
+  value,
+  onChange,
+  name,
+  type,
+  placeholder,
+}) => {
   return (
     <InputComponent
       type={type}
@@ -11,6 +18,4 @@ function Input({ value, onChange, name, type, placeholder }: InputProps) {
       onChange={onChange}
     />
   );
-}
-
-export default Input;
+};

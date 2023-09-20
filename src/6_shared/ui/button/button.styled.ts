@@ -5,7 +5,7 @@ export const ButtonComponent = styled.button`
   padding: 10px 17px;
   border-radius: 15px;
   border: none;
-  font-family: ${globalTheme.fonts[1]};
+  font-family: ${globalTheme.fonts.secondary};
   font-size: ${globalTheme.fontSize.md};
   font-weight: ${globalTheme.fontWeights.normal};
   background-color: ${globalTheme.colors.darkBrownAccent};

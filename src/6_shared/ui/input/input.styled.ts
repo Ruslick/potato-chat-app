@@ -7,8 +7,9 @@ export const InputComponent = styled.input`
   background-color: ${globalTheme.colors.white};
   border: 4px solid ${globalTheme.colors.mediumOrange};
   color: ${globalTheme.colors.softGreen};
-  font-family: ${globalTheme.fonts[0]};
+  font-family: ${globalTheme.fonts.main};
   font-size: ${globalTheme.fontSize.sm};
   font-weight: ${globalTheme.fontWeights.normal};
   outline-color: ${globalTheme.colors.darkBrownAccent};
 `;
+export default InputComponent;

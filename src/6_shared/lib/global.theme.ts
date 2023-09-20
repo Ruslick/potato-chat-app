@@ -8,7 +8,11 @@ const globalTheme = {
     darkGreyGreen: "#5C5C54",
     white: "#fff",
   },
-  fonts: ["Roboto", "Nautilus Pompilius", "sans-serif"],
+  fonts: {
+    main: "Roboto",
+    secondary: "Nautilus Pompilius",
+    reserve: "sans-serif",
+  },
   fontSize: {
     xs: "0.8rem",
     sm: "1.25rem",
