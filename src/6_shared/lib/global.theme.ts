@@ -1,4 +1,4 @@
-const globalTheme = {
+export const globalTheme = {
   colors: {
     lightOrange: "#FFE8D6",
     mediumOrange: "#DDBEA9",
@@ -22,5 +22,3 @@ const globalTheme = {
     bold: 700,
   },
 };
-
-export default globalTheme;

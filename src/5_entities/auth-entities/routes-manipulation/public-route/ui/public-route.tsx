@@ -4,24 +4,23 @@ import { Navigate, Outlet } from "react-router-dom";
 import { Loader, authFirebase } from "../../../../../6_shared";
 
 export const PublicRoute: FC = () => {
-	const [isAuth, setIsAuth] = useState(false);
-	const [loaded, setLoaded] = useState(false);
+  const [isAuth, setIsAuth] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
-	useEffect(() => {
-		onAuthStateChanged(authFirebase, (user) => {
-			setIsAuth(!!user);
-			setLoaded(true);
-		});
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+  useEffect(() => {
+    onAuthStateChanged(authFirebase, (user) => {
+      setIsAuth(!!user);
+      setLoaded(true);
+    });
+  }, []);
 
-	if (!loaded) {
-		return <Loader />;
-	}
+  if (!loaded) {
+    return <Loader />;
+  }
 
-	if (isAuth) {
-		return <Navigate to={"/"} />;
-	}
+  if (isAuth) {
+    return <Navigate to={"/"} />;
+  }
 
-	return <Outlet />
+  return <Outlet />;
 };

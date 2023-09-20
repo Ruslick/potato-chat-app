@@ -6,9 +6,9 @@ import { LoginFormComponent } from "./auth-forms/login-form/ui/login-form";
 import { Logout } from "./logout/ui/logout.component";
 
 export {
-	Logout as LogoutFeature,
-	LoginFormComponent as LoginFeature,
-	RegisterFormComponent as RegisterFeature,
-	ResetFormComponent as ResetFeature,
-	UsernameFormComponent as UsernameFeature,
+  Logout as LogoutFeature,
+  LoginFormComponent as LoginFeature,
+  RegisterFormComponent as RegisterFeature,
+  ResetFormComponent as ResetFeature,
+  UsernameFormComponent as UsernameFeature,
 };
