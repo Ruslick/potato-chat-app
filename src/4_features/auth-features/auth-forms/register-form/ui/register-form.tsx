@@ -12,7 +12,7 @@ export const RegisterFormComponent: FC = () => {
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [createUser, user, loading, error] = useCreateUserWithEmailAndPassword(authFirebase);
+  const [createUser, _, loading, error] = useCreateUserWithEmailAndPassword(authFirebase);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

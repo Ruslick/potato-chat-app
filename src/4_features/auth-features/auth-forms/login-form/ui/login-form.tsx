@@ -9,7 +9,7 @@ export const LoginFormComponent: FC = () => {
   const [values, handleChange] = useInputs({ email: '', password: '' });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [signInWithEmailAndPassword, user, loading, error] =
+  const [signInWithEmailAndPassword, _, loading, error] =
     useSignInWithEmailAndPassword(authFirebase);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
