@@ -51,7 +51,7 @@
     "no-console": ["warn", { "allow": ["warn", "error"] }],
     "curly": ["warn", "multi-line"],
     "react/no-array-index-key": ["error"],
-    "@typescript-eslint/no-floating-promises": "warn",
+    "@typescript-eslint/no-floating-promises": "off",
     "@typescript-eslint/naming-convention": [
       "error",
       {
