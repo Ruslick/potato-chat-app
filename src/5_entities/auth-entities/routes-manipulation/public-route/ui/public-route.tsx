@@ -15,7 +15,7 @@ export const PublicRoute: FC = () => {
   }, []);
 
   if (!loaded) {
-    return <Loader />;
+    return <Loader isVisible={loaded} />;
   }
 
   if (isAuth) {
