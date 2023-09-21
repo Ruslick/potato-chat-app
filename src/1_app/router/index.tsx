@@ -6,10 +6,7 @@ import {
   RegisterPage,
   ResetPasswordPage,
 } from "../../2_pages";
-import {
-  PrivateRoute,
-  PublicRoute,
-} from "../../5_entities/auth-entities/routes-manipulation";
+import { PrivateRoute, PublicRoute } from "../../5_entities/auth-entities/routes-manipulation";
 
 export const router = createBrowserRouter([
   {

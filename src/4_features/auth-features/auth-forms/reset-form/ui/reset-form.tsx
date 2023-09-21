@@ -14,8 +14,7 @@ export const ResetFormComponent: FC = () => {
 
   const [isSent, setIsSent] = useState(false);
 
-  const [sendPasswordResetEmail, loading, error] =
-    useSendPasswordResetEmail(authFirebase);
+  const [sendPasswordResetEmail, loading, error] = useSendPasswordResetEmail(authFirebase);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -39,11 +38,11 @@ export const ResetFormComponent: FC = () => {
         <Input
           value={values.email}
           onChange={handleChange}
-          name="email"
-          type="email"
-          placeholder="email"
+          name='email'
+          type='email'
+          placeholder='email'
         />
-        <Button type="submit">Send</Button>
+        <Button type='submit'>Send</Button>
       </FormStyled>
       <Loader isVisible={loading} />
     </>

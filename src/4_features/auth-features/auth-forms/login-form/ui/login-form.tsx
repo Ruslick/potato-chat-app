@@ -9,7 +9,7 @@ export const LoginFormComponent: FC = () => {
   const [values, handleChange] = useInputs({ email: "", password: "" });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [signInWithEmailAndPassword, _, loading, error] =
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(authFirebase);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -25,18 +25,18 @@ export const LoginFormComponent: FC = () => {
         <Input
           value={values.email}
           onChange={handleChange}
-          name="email"
-          type="email"
-          placeholder="email"
+          name='email'
+          type='email'
+          placeholder='email'
         />
         <Input
           value={values.password}
           onChange={handleChange}
-          name="password"
-          type="password"
-          placeholder="password"
+          name='password'
+          type='password'
+          placeholder='password'
         />
-        <Button type="submit">Sign in</Button>
+        <Button type='submit'>Sign in</Button>
       </FormStyled>
       <Loader isVisible={loading} />
     </>

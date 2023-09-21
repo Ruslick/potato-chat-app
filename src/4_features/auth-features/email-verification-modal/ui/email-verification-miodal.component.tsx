@@ -19,11 +19,9 @@ export const EmailVerificationModal: FC = () => {
 
   return (
     isVisible && (
-      <Modal title="Email not verified" toggleModal={toggleModal}>
+      <Modal title='Email not verified' toggleModal={toggleModal}>
         <h1>Please verify your email: {user.email}</h1>
-        <Button onClick={sandVerificationHandle}>
-          Send verification email
-        </Button>
+        <Button onClick={sandVerificationHandle}>Send verification email</Button>
       </Modal>
     )
   );

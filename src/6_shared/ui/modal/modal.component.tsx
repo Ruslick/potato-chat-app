@@ -24,9 +24,7 @@ export const Modal: FC<ModalProps> = ({ title, toggleModal, children }) => {
       <ModalContentStyled onClick={(e) => e.stopPropagation()}>
         <ModalHeaderStyled>
           <h3>{title}</h3>
-          <ModalCloseButtonStyled onClick={handleToggleModal}>
-            X
-          </ModalCloseButtonStyled>
+          <ModalCloseButtonStyled onClick={handleToggleModal}>X</ModalCloseButtonStyled>
         </ModalHeaderStyled>
         <ModalDividerStyled />
         {children}

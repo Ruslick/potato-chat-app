@@ -8,9 +8,7 @@ interface IPrivateRoute {
   extexdsUsername?: boolean;
 }
 
-export const PrivateRoute: FC<IPrivateRoute> = ({
-  extexdsUsername = false,
-}) => {
+export const PrivateRoute: FC<IPrivateRoute> = ({ extexdsUsername = false }) => {
   const [user, loading, error] = useAuthState(authFirebase);
 
   if (error) throw new Error(error.message);

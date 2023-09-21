@@ -12,8 +12,7 @@ export const RegisterFormComponent: FC = () => {
   });
 
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [createUser, _, loading, error] =
-    useCreateUserWithEmailAndPassword(authFirebase);
+  const [createUser, user, loading, error] = useCreateUserWithEmailAndPassword(authFirebase);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,18 +27,18 @@ export const RegisterFormComponent: FC = () => {
         <Input
           value={values.email}
           onChange={handleChange}
-          name="email"
-          type="email"
-          placeholder="email"
+          name='email'
+          type='email'
+          placeholder='email'
         />
         <Input
           value={values.password}
           onChange={handleChange}
-          name="password"
-          type="password"
-          placeholder="password"
+          name='password'
+          type='password'
+          placeholder='password'
         />
-        <Button type="submit">Sign in</Button>
+        <Button type='submit'>Sign in</Button>
       </FormStyled>
       <Loader isVisible={loading} />
     </>
