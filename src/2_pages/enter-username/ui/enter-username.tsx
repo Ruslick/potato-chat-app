@@ -1,5 +1,5 @@
-import { FC } from "react";
-import { UsernameFeature } from "../../../4_features/auth-features/";
+import { FC } from 'react';
+import { UsernameFeature } from '../../../4_features/auth-features/';
 
 export const EnterUsernamePage: FC = () => {
   return (

@@ -1,5 +1,5 @@
-import { ButtonComponent } from "./button.styled";
-import { ButtonProps } from "../../model/button";
+import { ButtonComponent } from './button.styled';
+import { ButtonProps } from '../../model/button';
 
 export const Button = ({ children, onClick, type }: ButtonProps) => {
   return (

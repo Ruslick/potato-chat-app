@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 export const useInputs: <T>(
-  initValues: T,
+  initValues: T
 ) => [T, (e: React.ChangeEvent<HTMLInputElement>) => void] = (initValues) => {
   const [values, setValues] = useState<typeof initValues>(initValues);
 

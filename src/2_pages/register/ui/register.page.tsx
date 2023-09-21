@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
-import { RegisterFeature } from "../../../4_features/auth-features";
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
+import { RegisterFeature } from '../../../4_features/auth-features';
 
 export const RegisterPage: FC = () => {
   return (
@@ -8,7 +8,7 @@ export const RegisterPage: FC = () => {
       <RegisterFeature />
 
       <p>
-        Already have an account ? <Link to={"/login"}>Sign in</Link>
+        Already have an account ? <Link to={'/login'}>Sign in</Link>
       </p>
     </>
   );

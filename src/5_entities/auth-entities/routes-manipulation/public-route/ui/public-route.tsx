@@ -1,7 +1,7 @@
-import { onAuthStateChanged } from "firebase/auth";
-import { FC, useEffect, useState } from "react";
-import { Navigate, Outlet } from "react-router-dom";
-import { Loader, authFirebase } from "../../../../../6_shared";
+import { onAuthStateChanged } from 'firebase/auth';
+import { FC, useEffect, useState } from 'react';
+import { Navigate, Outlet } from 'react-router-dom';
+import { Loader, authFirebase } from '../../../../../6_shared';
 
 export const PublicRoute: FC = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -15,11 +15,11 @@ export const PublicRoute: FC = () => {
   }, []);
 
   if (!loaded) {
-    return <Loader />;
+    return <Loader isVisible={loaded} />;
   }
 
   if (isAuth) {
-    return <Navigate to={"/"} />;
+    return <Navigate to={'/'} />;
   }
 
   return <Outlet />;
