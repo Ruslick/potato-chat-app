@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { globalTheme } from "../../lib/global.theme";
+import styled from 'styled-components';
+import { globalTheme } from '../../lib/global.theme';
 
 export const ButtonComponent = styled.button`
   padding: 10px 17px;

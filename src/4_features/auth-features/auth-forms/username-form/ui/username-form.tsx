@@ -1,15 +1,15 @@
-import { FC } from "react";
-import { useNavigate } from "react-router-dom";
-import { useInputs } from "../../../../../5_entities/auth-entities/auth";
-import { FormStyled, Loader, authFirebase } from "../../../../../6_shared";
-import { Button } from "../../../../../6_shared/ui/button/button.component";
-import { Input } from "../../../../../6_shared/ui/input/input.component";
+import { FC } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useInputs } from '../../../../../5_entities/auth-entities/auth';
+import { FormStyled, Loader, authFirebase } from '../../../../../6_shared';
+import { Button } from '../../../../../6_shared/ui/button/button.component';
+import { Input } from '../../../../../6_shared/ui/input/input.component';
 
-import { useUpdateProfile } from "react-firebase-hooks/auth";
+import { useUpdateProfile } from 'react-firebase-hooks/auth';
 
 export const UsernameFormComponent: FC = () => {
   const [values, handleChange] = useInputs({
-    username: "",
+    username: ''
   });
 
   const navigate = useNavigate();
@@ -19,9 +19,9 @@ export const UsernameFormComponent: FC = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // updater(authFirebase, { displayName: values.username })
-    if (!authFirebase.currentUser) throw new Error("No user");
+    if (!authFirebase.currentUser) throw new Error('No user');
     updateProfile({
-      displayName: values.username,
+      displayName: values.username
     }).then(() => {
       navigate(0);
     });
@@ -35,11 +35,11 @@ export const UsernameFormComponent: FC = () => {
         <Input
           value={values.username}
           onChange={handleChange}
-          name="username"
-          type="username"
-          placeholder="username"
+          name='username'
+          type='username'
+          placeholder='username'
         />
-        <Button type="submit">Send</Button>
+        <Button type='submit'>Send</Button>
       </FormStyled>
       <Loader isVisible={updating} />
     </>

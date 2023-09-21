@@ -1,12 +1,12 @@
-import { FC, ReactNode } from "react";
-import { createPortal } from "react-dom";
+import { FC, ReactNode } from 'react';
+import { createPortal } from 'react-dom';
 import {
   ModalCloseButtonStyled,
   ModalContentStyled,
   ModalDividerStyled,
   ModalHeaderStyled,
-  ModalWrapperStyled,
-} from "./modal.styled";
+  ModalWrapperStyled
+} from './modal.styled';
 
 interface ModalProps {
   title: string;
@@ -24,14 +24,12 @@ export const Modal: FC<ModalProps> = ({ title, toggleModal, children }) => {
       <ModalContentStyled onClick={(e) => e.stopPropagation()}>
         <ModalHeaderStyled>
           <h3>{title}</h3>
-          <ModalCloseButtonStyled onClick={handleToggleModal}>
-            X
-          </ModalCloseButtonStyled>
+          <ModalCloseButtonStyled onClick={handleToggleModal}>X</ModalCloseButtonStyled>
         </ModalHeaderStyled>
         <ModalDividerStyled />
         {children}
       </ModalContentStyled>
     </ModalWrapperStyled>,
-    document.getElementById("modal") as HTMLElement,
+    document.getElementById('modal') as HTMLElement
   );
 };

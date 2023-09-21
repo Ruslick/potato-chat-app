@@ -1,2 +1,2 @@
-import { useInputs } from "./lib/helpers";
+import { useInputs } from './lib/helpers';
 export { useInputs };

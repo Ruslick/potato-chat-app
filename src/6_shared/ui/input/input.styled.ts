@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { globalTheme } from "../../lib/global.theme";
+import styled from 'styled-components';
+import { globalTheme } from '../../lib/global.theme';
 
 export const InputComponent = styled.input`
   padding: 14px 95px 14px 14px;

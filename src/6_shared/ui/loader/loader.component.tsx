@@ -1,6 +1,6 @@
-import { FC } from "react";
-import { createPortal } from "react-dom";
-import { LoaderStyled, LoaderWrapperStyled } from "./loader.styled";
+import { FC } from 'react';
+import { createPortal } from 'react-dom';
+import { LoaderStyled, LoaderWrapperStyled } from './loader.styled';
 
 interface LoaderProps {
   isVisible: boolean;
@@ -16,6 +16,6 @@ export const Loader: FC<LoaderProps> = ({ isVisible }) => {
         <div />
       </LoaderStyled>
     </LoaderWrapperStyled>,
-    document.getElementById("modal") as HTMLElement,
+    document.getElementById('modal') as HTMLElement
   );
 };

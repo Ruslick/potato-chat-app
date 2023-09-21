@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const rotate1 = keyframes`
  0% {
@@ -37,7 +37,7 @@ export const LoaderWrapperStyled = styled.div<{ $isVisible: boolean }>`
   height: 100vh;
   background-color: #00000055;
   opacity: ${(props) => (props.$isVisible ? 1 : 0)};
-  pointer-events: ${(props) => (props.$isVisible ? "auto" : "none")};
+  pointer-events: ${(props) => (props.$isVisible ? 'auto' : 'none')};
   transition: 300ms 150ms opacity;
 `;
 

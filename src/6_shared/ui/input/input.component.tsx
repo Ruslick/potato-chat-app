@@ -1,13 +1,7 @@
-import { InputProps } from "../../model/input";
-import { InputComponent } from "./input.styled";
+import { InputProps } from '../../model/input';
+import { InputComponent } from './input.styled';
 
-export function Input({
-  value,
-  onChange,
-  name,
-  type,
-  placeholder,
-}: InputProps) {
+export function Input({ value, onChange, name, type, placeholder }: InputProps) {
   return (
     <InputComponent
       type={type}
