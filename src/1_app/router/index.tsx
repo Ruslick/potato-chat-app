@@ -4,14 +4,18 @@ import {
   HomePage,
   LoginPage,
   RegisterPage,
-  ResetPasswordPage
+  ResetPasswordPage,
+  UsersPage
 } from '../../2_pages';
 import { PrivateRoute, PublicRoute } from '../../5_entities/auth-entities/routes-manipulation';
 
 export const router = createBrowserRouter([
   {
     element: <PrivateRoute />,
-    children: [{ index: true, element: <HomePage /> }]
+    children: [
+      { index: true, element: <HomePage /> },
+      { path: 'users', element: <UsersPage /> }
+    ]
   },
   {
     element: <PublicRoute />,
