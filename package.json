@@ -7,18 +7,9 @@
     "start": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src",
-    "lint-fix": "eslint src --quiet --fix",
+    "lint-fix": "eslint src --fix --color",
     "preview": "vite preview",
-    "prepare": "husky install",
-    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
-    "postinstall": "husky install",
-    "pre-commit": "lint-staged"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run format && git add .",
-      "pre-push": "npm run lint"   
-    }
+    "format": "prettier --write \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@parse/react": "^0.0.1-alpha.18",
@@ -52,17 +43,16 @@
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-react-refresh": "^0.4.3",
-    "husky": "^8.0.0",
+    "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
     "prettier": "^3.0.3",
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
-      "prettier --write \"src/**/*.{ts,tsx}\"",
-      "eslint --quiet --fix",
-      "git add --all"
+    "*.{ts,tsx}": [
+      "npm run format",
+      "npm run lint-fix"
     ]
   }
 }

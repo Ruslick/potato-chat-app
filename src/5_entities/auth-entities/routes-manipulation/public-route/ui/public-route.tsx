@@ -1,24 +1,18 @@
-import { onAuthStateChanged } from 'firebase/auth';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { Navigate, Outlet } from 'react-router-dom';
 import { Loader, authFirebase } from '../../../../../6_shared';
 
 export const PublicRoute: FC = () => {
-  const [isAuth, setIsAuth] = useState(false);
-  const [loaded, setLoaded] = useState(false);
+  const [user, loading, error] = useAuthState(authFirebase);
 
-  useEffect(() => {
-    onAuthStateChanged(authFirebase, (user) => {
-      setIsAuth(!!user);
-      setLoaded(true);
-    });
-  }, []);
+  if (error) throw new Error(error.message);
 
-  if (!loaded) {
-    return <Loader isVisible={loaded} />;
+  if (loading) {
+    return <Loader isVisible={loading} />;
   }
 
-  if (isAuth) {
+  if (user) {
     return <Navigate to={'/'} />;
   }
 

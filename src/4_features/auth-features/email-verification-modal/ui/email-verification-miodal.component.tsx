@@ -5,14 +5,14 @@ import { Button } from '../../../../6_shared/ui/button/button.component';
 import { Modal, authFirebase, useModal } from '../../../../6_shared';
 
 export const EmailVerificationModal: FC = () => {
-  const [sand] = useSendEmailVerification(authFirebase);
+  const [sendEmailVerification] = useSendEmailVerification(authFirebase);
   const user = getAuth().currentUser;
   const [isVisible, toggleModal] = useModal(true);
 
   if (!user) throw new Error('No user');
 
   const sandVerificationHandle = () => {
-    sand().then(() => {
+    sendEmailVerification().then(() => {
       toggleModal();
     });
   };
