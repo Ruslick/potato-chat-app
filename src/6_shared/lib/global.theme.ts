@@ -11,7 +11,7 @@ export const globalTheme = {
   fonts: ['Roboto', 'Nautilus Pompilius', 'sans-serif'],
   fontSize: {
     xs: '0.8rem',
-    sm: '1.25rem',
+    sm: '1.3rem',
     md: '1.5625rem',
     lg: '3rem',
     xl: '4.5rem'

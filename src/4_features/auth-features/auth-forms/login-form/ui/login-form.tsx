@@ -22,6 +22,7 @@ export const LoginFormComponent: FC = () => {
   return (
     <>
       <FormStyled onSubmit={handleSubmit}>
+        <p>Email:</p>
         <Input
           value={values.email}
           onChange={handleChange}
@@ -29,6 +30,7 @@ export const LoginFormComponent: FC = () => {
           type='email'
           placeholder='email'
         />
+        <p>Password:</p>
         <Input
           value={values.password}
           onChange={handleChange}

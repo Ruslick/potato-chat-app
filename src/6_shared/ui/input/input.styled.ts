@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { globalTheme } from '../../lib/global.theme';
 
 export const InputComponent = styled.input`
-  padding: 14px 95px 14px 14px;
+  width: 250px;
+  height: 50px;
   border-radius: 15px;
   background-color: ${globalTheme.colors.white};
   border: 4px solid ${globalTheme.colors.mediumOrange};
@@ -11,4 +12,5 @@ export const InputComponent = styled.input`
   font-size: ${globalTheme.fontSize.sm};
   font-weight: ${globalTheme.fontWeights.normal};
   outline-color: ${globalTheme.colors.darkBrownAccent};
+  text-indent: 18px;
 `;
