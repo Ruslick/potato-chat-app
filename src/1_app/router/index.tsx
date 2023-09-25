@@ -1,5 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 import {
+  ChatsPage,
   EnterUsernamePage,
   HomePage,
   LoginPage,
@@ -14,7 +15,8 @@ export const router = createBrowserRouter([
     element: <PrivateRoute />,
     children: [
       { index: true, element: <HomePage /> },
-      { path: 'search', element: <SearchPage /> }
+      { path: 'search', element: <SearchPage /> },
+      { path: 'chats', element: <ChatsPage /> }
     ]
   },
   {

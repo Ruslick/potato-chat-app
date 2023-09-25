@@ -37,7 +37,7 @@ export const addContact = async (search: string) => {
   if (!checkedMessages.empty) throw new Error('Contact already added');
 
   const messagesDoc = await addDoc(messagesRef, {
-    users: [currentUsetUid, contactUid]
+    users: [contactDBRef, currentUserDBRef]
   });
 
   await Promise.all([

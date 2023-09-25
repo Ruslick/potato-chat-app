@@ -1,5 +1,11 @@
 import { User } from 'firebase/auth';
-import { DocumentReference } from 'firebase/firestore';
+import {
+  DocumentReference,
+  QueryDocumentSnapshot,
+  SnapshotOptions,
+  DocumentData,
+  FirestoreDataConverter
+} from 'firebase/firestore';
 
 export interface UserDBDTO {
   uid: string;
@@ -8,20 +14,15 @@ export interface UserDBDTO {
   messages?: DocumentReference[];
 }
 
-// const userConverter: FirestoreDataConverter<UserDBDTO> = {
-//   toFirestore(user: UserDBDTO): DocumentData {
-//     return user;
-//   },
-//   fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): UserDBDTO {
-//     const data = snapshot.data(options);
-//     return {
-//       author: data.author,
-//       id: snapshot.id,
-//       ref: snapshot.ref,
-//       title: data.title
-//     };
-//   }
-// };
+export const userConverter: FirestoreDataConverter<UserDBDTO> = {
+  toFirestore(user: UserDBDTO): DocumentData {
+    return user;
+  },
+  fromFirestore(snapshot: QueryDocumentSnapshot, options: SnapshotOptions): UserDBDTO {
+    const data = snapshot.data(options);
+    return data as UserDBDTO;
+  }
+};
 
 // const ref = collection(firestore, 'posts').withConverter(postConverter);
 // const [data, loading, error] = useCollectionData(ref);

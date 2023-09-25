@@ -1,10 +1,9 @@
 import { FC } from 'react';
 import { useIdToken } from 'react-firebase-hooks/auth';
 import { LogoutFeature } from '../../../4_features/auth-features';
-import { authFirebase, firestoreApp } from '../../../6_shared';
-
-import { doc } from 'firebase/firestore';
-import { useDocument } from 'react-firebase-hooks/firestore';
+import { authFirebase } from '../../../6_shared';
+import { Link } from 'react-router-dom';
+import { Button } from '../../../6_shared/ui/button/button.component';
 
 export const HomePage: FC = () => {
   if (!authFirebase.currentUser) throw new Error('No user');
@@ -12,21 +11,21 @@ export const HomePage: FC = () => {
 
   if (!user) throw new Error('No user');
 
-  const [data] = useDocument(doc(firestoreApp, 'users', user.uid));
-
-  console.log(data);
-
-  // getDoc(doc(firestoreApp, 'messages', data?.data()?.messages[0].id));
-  // if (data?.data()?.messages.length === 0) throw new Error('No messages');
+  // const [data] = useCollection(
+  //   query(collection(firestoreApp, 'messages'), where('users', 'array-contains', user.uid))
+  // );
 
   return (
     <div>
       <h1>Home page</h1>
       <p>Welcome, {authFirebase.currentUser.displayName}</p>
       {!user.emailVerified && <p>Email {user.email} not verified</p>}
-      <div>
-        <h1>Chats</h1>
-      </div>
+      <Link to={'/search'}>
+        <Button>Add contact</Button>
+      </Link>
+      <Link to={'/chats'}>
+        <Button>Chats</Button>
+      </Link>
       <LogoutFeature />
     </div>
   );
