@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { useInputs } from '../../../../../5_entities/auth-entities/auth';
+import { useInputs } from '../../../../../5_entities/auth-entities';
 import { FormStyled, Loader, authFirebase } from '../../../../../6_shared';
 import { Input } from '../../../../../6_shared/ui/input/input.component';
 import { Button } from '../../../../../6_shared/ui/button/button.component';
