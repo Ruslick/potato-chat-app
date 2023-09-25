@@ -22,18 +22,24 @@ export const LoginFormComponent: FC = () => {
   return (
     <>
       <FormStyled onSubmit={handleSubmit}>
-        <p>Email:</p>
+        <label htmlFor='email'>
+          <span>Email:</span>
+        </label>
         <Input
           value={values.email}
           onChange={handleChange}
+          id='email'
           name='email'
           type='email'
           placeholder='email'
         />
-        <p>Password:</p>
+        <label htmlFor='password'>
+          <span>Password:</span>
+        </label>
         <Input
           value={values.password}
           onChange={handleChange}
+          id='password'
           name='password'
           type='password'
           placeholder='password'

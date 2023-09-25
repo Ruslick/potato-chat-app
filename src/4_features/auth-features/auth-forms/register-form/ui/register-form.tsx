@@ -29,19 +29,27 @@ export const RegisterFormComponent: FC = () => {
   return (
     <>
       <FormStyled onSubmit={handleSubmit}>
+        <label htmlFor='email'>
+          <span>Email:</span>
+        </label>
         <Input
           value={values.email}
           onChange={handleChange}
           name='email'
           type='email'
           placeholder='email'
+          id='email'
         />
+        <label htmlFor='password'>
+          <span>Password:</span>
+        </label>
         <Input
           value={values.password}
           onChange={handleChange}
           name='password'
           type='password'
           placeholder='password'
+          id='password'
         />
         <Button type='submit'>Sign in</Button>
       </FormStyled>

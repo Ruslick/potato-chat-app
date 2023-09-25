@@ -1,7 +1,7 @@
 import { InputProps } from '../../model/input';
 import { InputComponent } from './input.styled';
 
-export function Input({ value, onChange, name, type, placeholder }: InputProps) {
+export function Input({ value, onChange, name, type, placeholder, id }: InputProps) {
   return (
     <InputComponent
       type={type}
@@ -9,6 +9,7 @@ export function Input({ value, onChange, name, type, placeholder }: InputProps) 
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      id={id}
     />
   );
 }
