@@ -9,8 +9,8 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding:0;
     box-sizing: border-box;
-    font-weight: ${globalTheme.fontWeights.normal};
-    /* background-color: ${globalTheme.colors.lightOrange}; */
+    /* font-weight: ${globalTheme.fontWeights.normal}; */
+    background-color: ${globalTheme.colors.primaryBg};
     min-height: 100vh;
     display: flex;
     flex-direction: column;

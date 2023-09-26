@@ -36,13 +36,15 @@ export const ResetFormComponent: FC = () => {
     <>
       <FormStyled onSubmit={handleSubmit}>
         <Input
+          label={'Email:'}
           value={values.email}
           onChange={handleChange}
           name='email'
+          id='email'
           type='email'
           placeholder='email'
         />
-        <Button type='submit'>Send</Button>
+        <Button type='submit'>Reset</Button>
       </FormStyled>
       <Loader isVisible={loading} />
     </>

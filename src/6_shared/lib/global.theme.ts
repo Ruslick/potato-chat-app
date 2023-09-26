@@ -1,6 +1,6 @@
 export const globalTheme = {
   colors: {
-    lightOrange: '#FFE8D6',
+    primaryBg: '#FFE8D6',
     mediumOrange: '#DDBEA9',
     darkBrownAccent: '#CB997E',
     softGreen: '#A5A58D',

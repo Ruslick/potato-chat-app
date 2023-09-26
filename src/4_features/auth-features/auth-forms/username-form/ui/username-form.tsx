@@ -43,13 +43,15 @@ export const UsernameFormComponent: FC = () => {
     <>
       <FormStyled onSubmit={handleSubmit}>
         <Input
+          label={'Username:'}
           value={values.username}
           onChange={handleChange}
+          id='username'
           name='username'
           type='username'
-          placeholder='username'
+          placeholder='Enter username'
         />
-        <Button type='submit'>Send</Button>
+        <Button type='submit'>Continue</Button>
       </FormStyled>
       <Loader isVisible={updating && loading} />
     </>

@@ -1,13 +1,17 @@
 import styled from 'styled-components';
 import { globalTheme } from '../../lib/global.theme';
 
-export const LoginWrapper = styled.div`
+export const LinksLoginWrapper = styled.div`
   font-family: ${globalTheme.fonts[0]};
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   p {
     margin: 0;
     color: ${globalTheme.colors.darkGreyGreen};
-    font-size: ${globalTheme.fontSize.sm};
     margin-bottom: 18px;
   }
   a {

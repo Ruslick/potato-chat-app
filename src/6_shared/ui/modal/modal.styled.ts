@@ -8,6 +8,7 @@ export const ModalWrapperStyled = styled.div`
   justify-content: center;
   position: fixed;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background-color: #00000055;

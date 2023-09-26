@@ -29,10 +29,11 @@ export const RegisterFormComponent: FC = () => {
   return (
     <>
       <FormStyled onSubmit={handleSubmit}>
-        <label htmlFor='email'>
+        {/* <label htmlFor='email'>
           <span>Email:</span>
-        </label>
+        </label> */}
         <Input
+          label={'Email:'}
           value={values.email}
           onChange={handleChange}
           name='email'
@@ -40,10 +41,8 @@ export const RegisterFormComponent: FC = () => {
           placeholder='email'
           id='email'
         />
-        <label htmlFor='password'>
-          <span>Password:</span>
-        </label>
         <Input
+          label={'Password:'}
           value={values.password}
           onChange={handleChange}
           name='password'
