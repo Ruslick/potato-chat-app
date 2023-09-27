@@ -10,7 +10,7 @@ export const FormStyled = styled.form`
   span {
     font-size: ${globalTheme.fontSize.md};
     font-family: ${globalTheme.fonts[0]};
-    color: ${globalTheme.colors.darkGreyGreen};
+    color: ${globalTheme.colors.secondaryDarkGreen};
     font-style: italic;
     font-weight: ${globalTheme.fontWeights.normal};
   }

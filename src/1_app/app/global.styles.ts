@@ -10,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
     padding:0;
     box-sizing: border-box;
     /* font-weight: ${globalTheme.fontWeights.normal}; */
-    background-color: ${globalTheme.colors.primaryBg};
+    background-color: ${globalTheme.colors.primaryOrangeBg};
     min-height: 100vh;
     display: flex;
     flex-direction: column;
