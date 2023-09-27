@@ -1,50 +1,31 @@
-import {
-  HeadingOne,
-  HeadingTwo,
-  HeadingThree,
-  ParOne,
-  ParTwo,
-  ParThree,
-  ParFour
-} from './typography.style';
+import React from 'react';
+import * as text from './typography.style';
 
 interface TypographyProps {
-  variant: string;
+  variant: keyof typeof variantComponents;
   children: React.ReactNode;
   weight?: string | number;
   fontStyle?: string;
 }
 
-export const Typography: React.FC<TypographyProps> = ({ fontStyle, weight, variant, children }) => {
-  return variant === 'h1' ? (
-    <HeadingOne $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </HeadingOne>
-  ) : variant === 'h2' ? (
-    <HeadingTwo $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </HeadingTwo>
-  ) : variant === 'h3' ? (
-    <HeadingThree $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </HeadingThree>
-  ) : variant === 'p1' ? (
-    <ParOne $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </ParOne>
-  ) : variant === 'p2' ? (
-    <ParTwo $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </ParTwo>
-  ) : variant === 'p3' ? (
-    <ParThree $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </ParThree>
-  ) : variant === 'p4' ? (
-    <ParFour $weight={weight} $fontStyle={fontStyle}>
-      {children}
-    </ParFour>
-  ) : (
-    ''
-  );
+const variantComponents = {
+  h1: text.HeadingOne,
+  h2: text.HeadingTwo,
+  h3: text.HeadingThree,
+  p1: text.ParOne,
+  p2: text.ParTwo,
+  p3: text.ParThree,
+  p4: text.ParFour
 };
+
+export const Typography: React.FC<TypographyProps> = React.memo(
+  ({ fontStyle, weight, variant, children }) => {
+    const Component = variantComponents[variant] || 'span';
+
+    return (
+      <Component $weight={weight} $fontStyle={fontStyle}>
+        {children}
+      </Component>
+    );
+  }
+);
