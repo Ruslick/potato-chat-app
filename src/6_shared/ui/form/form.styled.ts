@@ -7,12 +7,10 @@ export const FormStyled = styled.form`
   width: fit-content;
   gap: 18px;
   margin-bottom: 40px;
-  p {
-    padding: 0;
-    margin: 0;
+  span {
     font-size: ${globalTheme.fontSize.md};
     font-family: ${globalTheme.fonts[0]};
-    color: ${globalTheme.colors.darkGreyGreen};
+    color: ${globalTheme.colors.secondaryDarkGreen};
     font-style: italic;
     font-weight: ${globalTheme.fontWeights.normal};
   }

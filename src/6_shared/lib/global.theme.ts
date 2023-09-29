@@ -1,12 +1,20 @@
 export const globalTheme = {
   colors: {
-    lightOrange: '#FFE8D6',
-    mediumOrange: '#DDBEA9',
-    darkBrownAccent: '#CB997E',
-    softGreen: '#A5A58D',
-    oliveGreen: '#6B705C',
-    darkGreyGreen: '#5C5C54',
-    white: '#fff'
+    primaryOrangeBg: '#FFE8D6',
+    primaryMediumOrange: '#DDBEA9',
+    primaryDarkOrange: '#CB997E',
+    secondarySoftGreen: '#A5A58D',
+    secondaryOliveGreen: '#6B705C',
+    secondaryDarkGreen: '#5C5C54',
+    white: '#fff',
+    alertRedText: '#CF6969',
+    alertRedLightBg: '#FFD7D7',
+    alertYellowText: '#D8B457',
+    alertYellowLightBg: '#F5E4C3',
+    alertBlueText: '#8199D1',
+    alertBlueLightBg: '#DDE7FD',
+    alertGreenText: '#7DAB6B',
+    alertGreenLightBg: '#CAE4BF'
   },
   fonts: ['Roboto', 'Nautilus Pompilius', 'sans-serif'],
   fontSize: {

@@ -8,7 +8,7 @@ export const ButtonComponent = styled.button`
   font-family: ${globalTheme.fonts[1]};
   font-size: ${globalTheme.fontSize.md};
   font-weight: ${globalTheme.fontWeights.normal};
-  background-color: ${globalTheme.colors.darkBrownAccent};
+  background-color: ${globalTheme.colors.primaryDarkOrange};
   color: ${globalTheme.colors.white};
   transition: all 0.4s;
   cursor: pointer;
