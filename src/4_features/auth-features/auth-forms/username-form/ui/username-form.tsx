@@ -8,6 +8,7 @@ import { Input } from '../../../../../6_shared/ui/input/input.component';
 import { doc, updateDoc } from 'firebase/firestore';
 import { useIdToken, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { deleteUser } from 'firebase/auth';
+import { globalTheme } from '../../../../../6_shared/lib/global.theme';
 
 export const UsernameFormComponent: FC = () => {
   const [values, handleChange] = useInputs({
@@ -51,7 +52,14 @@ export const UsernameFormComponent: FC = () => {
           type='username'
           placeholder='Enter username'
         />
-        <Button type='submit'>Continue</Button>
+        <Button
+          type='submit'
+          width='250px'
+          height='50px'
+          backgroundColor={globalTheme.colors.primary.darkOrange}
+        >
+          Continue
+        </Button>
       </FormStyled>
       <Loader isVisible={updating && loading} />
     </>

@@ -11,10 +11,10 @@ export const LinksLoginWrapper = styled.div`
 
   p {
     margin: 0;
-    color: ${globalTheme.colors.secondaryDarkGreen};
+    color: ${globalTheme.colors.secondary.darkGreen};
     margin-bottom: 18px;
   }
   a {
-    color: ${globalTheme.colors.secondaryDarkGreen};
+    color: ${globalTheme.colors.secondary.darkGreen};
   }
 `;
