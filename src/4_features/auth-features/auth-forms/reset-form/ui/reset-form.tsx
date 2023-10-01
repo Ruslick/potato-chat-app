@@ -1,9 +1,8 @@
 import { FC, useState } from 'react';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
-import { useInputs } from '../../../../../5_entities/auth-entities';
 import { FormStyled } from '../../../../../6_shared/ui/form/form.styled';
-import { Loader, authFirebase } from '../../../../../6_shared';
+import { Loader, authFirebase, useInputs } from '../../../../../6_shared';
 import { Button } from '../../../../../6_shared/ui/button/button.component';
 import { Input } from '../../../../../6_shared/ui/input/input.component';
 

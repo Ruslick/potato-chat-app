@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useInputs } from '../../../../../5_entities/auth-entities';
-import { FormStyled, Loader, authFirebase, firestoreApp } from '../../../../../6_shared';
+import { FormStyled, Loader, authFirebase, firestoreApp, useInputs } from '../../../../../6_shared';
 import { Button } from '../../../../../6_shared/ui/button/button.component';
 import { Input } from '../../../../../6_shared/ui/input/input.component';
 

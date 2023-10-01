@@ -1,5 +1,7 @@
-import { useInputs } from './auth/lib/helpers';
-import { UserDBDTO, createUserFromAuthUser } from './auth/modal/createUser';
-export { useInputs, createUserFromAuthUser };
+import { userConverter } from './auth/modal/user.converter';
+import { UserDBDTO } from './auth/modal/user.modal';
+import { createUserFromAuthUser } from './auth/lib/create-user.helper';
+
+export { createUserFromAuthUser, userConverter };
 
 export type { UserDBDTO };

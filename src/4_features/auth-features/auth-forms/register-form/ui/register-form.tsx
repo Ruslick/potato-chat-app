@@ -1,13 +1,17 @@
 import { doc, setDoc } from 'firebase/firestore';
 import { FC } from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { createUserFromAuthUser, useInputs } from '../../../../../5_entities/auth-entities';
-import { FormStyled, Loader, authFirebase, firestoreApp } from '../../../../../6_shared';
+import { createUserFromAuthUser } from '../../../../../5_entities/auth-entities';
+import { FormStyled, Loader, authFirebase, firestoreApp, useInputs } from '../../../../../6_shared';
 import { Button } from '../../../../../6_shared/ui/button/button.component';
 import { Input } from '../../../../../6_shared/ui/input/input.component';
+import { updateProfile } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 export const RegisterFormComponent: FC = () => {
+  const navigate = useNavigate();
   const [values, handleChange] = useInputs({
+    username: '',
     email: '',
     password: ''
   });
@@ -17,10 +21,13 @@ export const RegisterFormComponent: FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    createUser(values.email, values.password).then((cred) => {
+    createUser(values.email, values.password).then(async (cred) => {
       if (!cred) throw new Error('No user');
-
-      setDoc(doc(firestoreApp, 'users', cred.user.uid), createUserFromAuthUser(cred.user));
+      await updateProfile(cred.user, {
+        displayName: values.username
+      });
+      await setDoc(doc(firestoreApp, 'users', cred.user.uid), createUserFromAuthUser(cred.user));
+      navigate(0);
     });
   };
 
@@ -29,9 +36,15 @@ export const RegisterFormComponent: FC = () => {
   return (
     <>
       <FormStyled onSubmit={handleSubmit}>
-        {/* <label htmlFor='email'>
-          <span>Email:</span>
-        </label> */}
+        <Input
+          label={'Username:'}
+          value={values.username}
+          onChange={handleChange}
+          name='username'
+          type='username'
+          placeholder='username'
+          id='username'
+        />
         <Input
           label={'Email:'}
           value={values.email}
@@ -50,7 +63,7 @@ export const RegisterFormComponent: FC = () => {
           placeholder='password'
           id='password'
         />
-        <Button type='submit'>Sign in</Button>
+        <Button type='submit'>Sign up</Button>
       </FormStyled>
       <Loader isVisible={loading} />
     </>

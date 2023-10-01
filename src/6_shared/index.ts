@@ -1,3 +1,4 @@
+import { useInputs } from './lib/inputs.hook';
 import { Loader } from './ui/loader/loader.component';
 import { Modal } from './ui/modal/modal.component';
 import { FormStyled } from './ui/form/form.styled';
@@ -11,3 +12,4 @@ export { firebaseApp, authFirebase, firestoreApp };
 export { Loader };
 export { FormStyled };
 export { Modal, useModal };
+export { useInputs };
