@@ -40,7 +40,7 @@ export const ModalHeaderStyled = styled.div`
 `;
 
 export const ModalCloseButtonStyled = styled.button`
-  background-color: ${globalTheme.colors.primaryMediumOrange};
+  background-color: ${globalTheme.colors.primary.mediumOrange};
   height: 2rem;
   width: 2rem;
   border: none;

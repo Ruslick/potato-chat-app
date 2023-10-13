@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useIdToken } from 'react-firebase-hooks/auth';
 import { LogoutFeature } from '../../../4_features/auth-features';
-import { TopMenuComponent, authFirebase } from '../../../6_shared';
+import { LayoutComponent, TopMenuComponent, authFirebase } from '../../../6_shared';
 // import { Link } from 'react-router-dom';
 import { Button } from '../../../6_shared/ui/button/button.component';
 import SvgHamburger from '../../../6_shared/ui/icon/assets/hamburger';
@@ -18,7 +18,7 @@ export const HomePage: FC = () => {
   // );
 
   return (
-    <>
+    <LayoutComponent justifyContent='space-between'>
       <TopMenuComponent>
         <Button width='40px' height='30px' padding='0'>
           <SvgHamburger
@@ -45,6 +45,6 @@ export const HomePage: FC = () => {
         <Button>Chats</Button>
       </Link> */}
       <LogoutFeature />
-    </>
+    </LayoutComponent>
   );
 };

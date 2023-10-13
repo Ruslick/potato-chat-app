@@ -7,6 +7,7 @@ export interface MainWrapperProps {
   flexDirection?: string;
   alignItems?: string;
   justifyContent?: string;
+  margin?: string;
 }
 
 export const LayoutComponent: FC<MainWrapperProps> = ({ children, ...props }) => {

@@ -9,10 +9,18 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${Nautilus});
   }
 
-  body {
+  *,
+  *::after,
+  *::before{
     margin: 0;
     padding:0;
     box-sizing: border-box;
+  }
+
+ 
+
+  body {
+   
     /* font-weight: ${globalTheme.fontWeights.normal}; */
     background-color: ${globalTheme.colors.primary.white};
     min-height: 100vh;
@@ -21,4 +29,11 @@ export const GlobalStyle = createGlobalStyle`
     justify-content: center;
     align-items: center;
   }
+
+  /* div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
 `;

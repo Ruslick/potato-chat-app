@@ -6,6 +6,10 @@ interface TypographyProps {
   children: React.ReactNode;
   weight?: string | number;
   fontStyle?: string;
+  fontFamily?: string;
+  fontColor?: string;
+  margin?: string;
+  textAlign?: string;
 }
 
 const variantComponents = {
@@ -19,11 +23,18 @@ const variantComponents = {
 };
 
 export const Typography: React.FC<TypographyProps> = React.memo(
-  ({ fontStyle, weight, variant, children }) => {
+  ({ fontStyle, weight, variant, children, fontFamily, fontColor, margin, textAlign }) => {
     const Component = variantComponents[variant] || 'span';
 
     return (
-      <Component $weight={weight} $fontStyle={fontStyle}>
+      <Component
+        $weight={weight}
+        $fontStyle={fontStyle}
+        $fontFamily={fontFamily}
+        $fontColor={fontColor}
+        $margin={margin}
+        $textAlign={textAlign}
+      >
         {children}
       </Component>
     );

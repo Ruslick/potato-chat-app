@@ -24,11 +24,11 @@ export const globalTheme = {
   },
   fonts: ['Roboto', 'Nautilus', 'sans-serif'],
   fontSize: {
-    xs: '0.8rem',
-    sm: '1.3rem',
-    md: '1.5625rem',
-    lg: '3rem',
-    xl: '4.5rem'
+    xs: '16px',
+    sm: '20px',
+    md: '25px',
+    lg: '35px',
+    xl: '70px'
   },
   fontWeights: {
     light: 100,
