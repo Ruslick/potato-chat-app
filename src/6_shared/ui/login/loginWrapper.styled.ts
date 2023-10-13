@@ -1,20 +1,20 @@
 import styled from 'styled-components';
 import { globalTheme } from '../../lib/global.theme';
 
-export const LoginWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
+export const LinksLoginWrapper = styled.div`
   font-family: ${globalTheme.fonts[0]};
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
   p {
     margin: 0;
-    color: ${globalTheme.colors.darkGreyGreen};
-    font-size: ${globalTheme.fontSize.sm};
+    color: ${globalTheme.colors.secondary.darkGreen};
     margin-bottom: 18px;
   }
   a {
-    color: ${globalTheme.colors.darkGreyGreen};
+    color: ${globalTheme.colors.secondary.darkGreen};
   }
 `;

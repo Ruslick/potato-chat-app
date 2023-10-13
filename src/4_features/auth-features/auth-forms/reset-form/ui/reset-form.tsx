@@ -6,6 +6,7 @@ import { FormStyled } from '../../../../../6_shared/ui/form/form.styled';
 import { Loader, authFirebase } from '../../../../../6_shared';
 import { Button } from '../../../../../6_shared/ui/button/button.component';
 import { Input } from '../../../../../6_shared/ui/input/input.component';
+import { globalTheme } from '../../../../../6_shared/lib/global.theme';
 
 export const ResetFormComponent: FC = () => {
   const [values, handleChange] = useInputs({ email: '' });
@@ -36,13 +37,22 @@ export const ResetFormComponent: FC = () => {
     <>
       <FormStyled onSubmit={handleSubmit}>
         <Input
+          label={'Email:'}
           value={values.email}
           onChange={handleChange}
           name='email'
+          id='email'
           type='email'
           placeholder='email'
         />
-        <Button type='submit'>Send</Button>
+        <Button
+          type='submit'
+          width='250px'
+          height='50px'
+          backgroundColor={globalTheme.colors.primary.darkOrange}
+        >
+          Reset
+        </Button>
       </FormStyled>
       <Loader isVisible={loading} />
     </>
